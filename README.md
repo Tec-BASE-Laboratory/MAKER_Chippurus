@@ -21,8 +21,8 @@ Remember to evaluate each round, is important to  at least run MAKER 3 times
 
 Run the following commands after each round to evaluate:
 Count number of genes
-$cat your.gff | awk '{ if ($3 == "gene") print $0 }' | awk '{ sum += ($5 - $4) } END { print NR, sum / NR }'
-#on MAKER/bin
-$perl AED_cdf_generator.pl -b 0.025 your.gff
+  $cat your.gff | awk '{ if ($3 == "gene") print $0 }' | awk '{ sum += ($5 - $4) } END { print NR, sum / NR }'
+On MAKER/bin
+  $perl AED_cdf_generator.pl -b 0.025 your.gff
 
-
+Finally run the merge_final_make.sh to obtain finall outputfiles
