@@ -1,4 +1,4 @@
-# MAKER_Chyppurus
+# MAKER_Chippurus
 Full description of commands used for annotate de Mahi mahi genome, with SNAP and AUGUSTUS 
 Install MAKER:
 https://github.com/Yandell-Lab/maker
@@ -14,4 +14,15 @@ Prior launching Maker the following programs are run independently
 4. AUGUSTUS https://github.com/Gaius-Augustus/Augustus
 5. SNAP https://hpc.nih.gov/apps/snap.html
 
-Here is the commands used for each run of MAKER, as well the .ctl files. We also add how to run AUGUSTUS and SNAP
+The scripts for AUGUSTUS and SNAP are for run separatedly 
+The script  MAKER_round1 is a round using RNAseq data, similar species proteins with out gene prediction support
+The script MAKER_round2 is a round using  gene prediction (Augustus or SNAP) 
+Remember to evaluate each round, is important to  at least run MAKER 3 times
+
+Run the following commands after each round to evaluate:
+Count number of genes
+$cat your.gff | awk '{ if ($3 == "gene") print $0 }' | awk '{ sum += ($5 - $4) } END { print NR, sum / NR }'
+#on MAKER/bin
+$perl AED_cdf_generator.pl -b 0.025 your.gff
+
+
