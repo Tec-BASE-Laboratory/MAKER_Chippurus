@@ -38,7 +38,7 @@ if [ ! -f dorado2.gb ]; then
 fi
 
 echo "GenBank (.gb) file created: dorado2.gb"
-
+#NOTE: EXPORT AUGUSTUS Configuration file  export AUGUSTUS_CONFIG_PATH=/workdir/$USER/augustus_config/
 # Step 3: Split the GenBank file into training and test sets
 perl /users/shinojosa/Augustus/scripts/randomSplit.pl dorado2.gb 1000
 
